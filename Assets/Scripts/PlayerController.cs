@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
-    void FixedUpdate()
+public class PlayerController : MonoBehaviour
+{
+    public float speed;
+
+    private void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -11,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour {
         Rigidbody rb = GetComponent<Rigidbody>();
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-        // Left off on Video 5 @ 6:19
+        rb.velocity = movement * speed;
     }
+
 }
