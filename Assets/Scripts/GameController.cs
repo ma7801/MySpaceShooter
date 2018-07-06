@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour {
 
@@ -10,9 +11,13 @@ public class GameController : MonoBehaviour {
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public TextMeshPro scoreText;
+    private int score;
 
     void Start()
     {
+        score = 0;
+        updateScore();
         StartCoroutine (SpawnWaves());
     }
 
@@ -31,5 +36,16 @@ public class GameController : MonoBehaviour {
 
             yield return new WaitForSeconds(waveWait);
         }
+    }
+
+    public void AddScore (int scoreIncrement)
+    {
+        score += scoreIncrement;
+        updateScore();
+    }
+
+    void updateScore()
+    {
+        scoreText.text = "Score: " + score;
     }
 }
