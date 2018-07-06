@@ -398,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tilt: 1
+  tilt: 3
   boundary:
     xMin: -6.5
     xMax: 6.5
@@ -846,9 +846,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a01e8357b2fd94fbff309190b6990f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazard: {fileID: 1887038654068962, guid: 025399a827279d64baad84e14afbb255, type: 2}
+  hazards:
+  - {fileID: 1887038654068962, guid: 025399a827279d64baad84e14afbb255, type: 2}
+  - {fileID: 1543986949908878, guid: b0b52a0ff20a82f4882eea185722402f, type: 2}
+  - {fileID: 1517335290053246, guid: 7fda99ad79089d5459c9e35484c22325, type: 2}
+  hazardSpeedIncreaseFactor: 1.2
   spawnValue: {x: 6, y: 0, z: 16}
   hazardCount: 10
+  hazardCountIncrementPerWave: 1
   spawnWait: 0.5
   startWait: 1
   waveWait: 4
