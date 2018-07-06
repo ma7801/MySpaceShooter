@@ -31,10 +31,23 @@ public class DestroyByContact : MonoBehaviour {
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
         }
+
         Instantiate(explosion, transform.position, transform.rotation);
+
+        
+        if (this.tag == "Friend")
+        {
+            gameController.AddScore(-scoreValue);
+        }
+        else
+        {
+            gameController.AddScore(scoreValue);
+
+        }
+
         Destroy(other.gameObject);
         Destroy(gameObject);
-        gameController.AddScore(scoreValue);
+        
 
-     }
+    }
 }
